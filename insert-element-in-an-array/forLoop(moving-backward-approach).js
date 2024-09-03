@@ -6,8 +6,9 @@ const position = 3;
 let newValue = 69;
 
 // backward moving array
-for(i = array.length-1; i>= position; i--){
-  array[i+1] = array[i]
+for(i = array.length-1; i>=position; i--){ 
+  array[i+1] = array[i] 
+  // JavaScript automatically extends the array to accommodate the new element. JS array behavior of automatic length extension
 }
 array[position] = newValue
 console.log(array)
