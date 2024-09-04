@@ -31,3 +31,15 @@ console.log(array);
 // console.log(array)
 
 // Push adds elements in the last of an array, modifies the original array, return the length of modified array 
+
+
+// CONDITION 2 :- do with making an empty array with new Array()
+// let newArray = new Array(array.length + 1) // creates a new array with empty items// in this case (6+1)
+// for(i = 0; i < position; i++){ // The loop control (for (let i = 0; i < position; i++)) only manages the index i. It doesn't need to reference the array directly because it's only responsible for iterating over the indices.
+//   newArray[i] = array[i] // The reference to array happens inside the loop body: newArray[i] = array[i];. This is where the elements of array are accessed and assigned to newArray.
+// }
+// newArray[position] = newValue;
+// for(i = position; i<array.length; i++){
+//   newArray[i + 1] = array[i]
+// }
+// console.log(newArray)

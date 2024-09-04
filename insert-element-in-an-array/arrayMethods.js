@@ -22,11 +22,11 @@ let newValue = 69;
 
 // concat method concatenates(joins) two or more arrays .concat(array), returns a new array containing the joined arrays, doesn't modify the original array, also a way to make a copy of an array as the old and concatenated array will both be a different array
 
-const slicedArrayFromLast = array.slice(position, array.length);
-const slicedArrayFromStart = array.slice(0, position)
-const concatNewItem = slicedArrayFromStart.concat(newValue, slicedArrayFromLast)
-// console.log(concatNewItem)
+// const slicedArrayFromLast = array.slice(position, array.length);
+// const slicedArrayFromStart = array.slice(0, position)
+// const concatNewItem = slicedArrayFromStart.concat(newValue, slicedArrayFromLast)
+// // console.log(concatNewItem)
 
-// short way 
-const newArray = array.slice(0,position).concat(newValue).concat(array.slice(position))
-console.log(newArray)
+// // short way 
+// const newArray = array.slice(0,position).concat(newValue).concat(array.slice(position))
+// console.log(newArray)
