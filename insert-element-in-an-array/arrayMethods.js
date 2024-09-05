@@ -78,4 +78,4 @@ console.log(array)
 // const newArray = array.map((element, index)=>
 //   index === position ? [newValue, element] : element
 // ).flat()
-// console.log(newArray)
+// console.log(newArray);
