@@ -1,22 +1,22 @@
 // 4.                        merge two arrays in a new array
 
-// for loop 
-
 const firstArray = [3,99,25,61,34,78,69]
 const secondArray = [33,19,52,16,43,87]
 let newArray = []
 
-for(let i = 0; i < firstArray.length; i++){
-  newArray[i] = firstArray[i]
-  // newArray.push(firstArray[i])
-}
-console.log(newArray)
+// for loop 
 
-for(let i = 0; i<secondArray.length; i++){
-  newArray[firstArray.length + i] = secondArray[i]
-// newArray.push(secondArray[i])
-}
-console.log(newArray)
+// for(let i = 0; i < firstArray.length; i++){
+//   newArray[i] = firstArray[i]
+//   // newArray.push(firstArray[i])
+// }
+// console.log(newArray)
+
+// for(let i = 0; i<secondArray.length; i++){
+//   newArray[firstArray.length + i] = secondArray[i]
+// // newArray.push(secondArray[i])
+// }
+// console.log(newArray)
 
   // CONDITION : print the reverse values 
   
@@ -51,3 +51,36 @@ console.log(newArray)
 //   newArray[firstArray.length + i] = secondArray[i] 
 // }
 // console.log(newArray)
+
+
+// while loop 
+
+// let i = 0;
+
+// while(i < firstArray.length){
+//   newArray[i] = firstArray[i]
+//   i++
+// }
+// i = 0
+// while(i < secondArray.length){
+//   newArray[firstArray.length + i] = secondArray[i]
+//   i++
+// }
+// console.log(newArray)
+// OR 
+// let newEmptyArray = new Array(firstArray.length + secondArray.length)
+// let i = 0;
+// let j = 0;
+// let k = 0;
+
+// while(i < newEmptyArray.length){
+//   if(j<firstArray.length){
+//     newEmptyArray[i] = firstArray[j]
+//     j++
+//   }else{
+//     newEmptyArray[i] = secondArray[k]
+//     k++
+//   }
+//   i++
+// }
+// console.log(newEmptyArray)
