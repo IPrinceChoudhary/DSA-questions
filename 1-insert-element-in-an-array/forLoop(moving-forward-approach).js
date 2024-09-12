@@ -24,7 +24,7 @@ console.log(array);
 
 // for (let i = position; i < array.length; i++) {
 //   let temp = array[i]
-//   array[i] = newValue;
+  // array[i] = newValue;
 //   newValue = temp
 // }
 // array.push(newValue)
