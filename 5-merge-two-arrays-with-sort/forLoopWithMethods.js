@@ -32,24 +32,56 @@ let resultArray = [];
 
 // for loop without push and without sort 
 
-let index = 0;
-for(let i = 0; i<firstArray.length; i++){
-  resultArray[index] = firstArray[i];
-  index++
-}
-for(let i = 0; i<secondArray.length; i++){
-  resultArray[index] = secondArray[i];
-  index++
-}
-console.log(resultArray)
+// let index = 0;
+// for(let i = 0; i<firstArray.length; i++){
+//   resultArray[index] = firstArray[i];
+//   index++
+// }
+// for(let i = 0; i<secondArray.length; i++){
+//   resultArray[index] = secondArray[i];
+//   index++
+// }
+// console.log(resultArray)
 
-for(let i = 0; i<resultArray.length; i++){
-  for(let j = i + 1; j < resultArray.length; j++){
-    if(resultArray[i] > resultArray[j]){
-      let temp = resultArray[i]
-      resultArray[i] = resultArray[j]
-      resultArray[j] = temp
-    }
-  }
-}
-console.log(resultArray)
+// for(let i = 0; i<resultArray.length; i++){
+//   for(let j = i + 1; j < resultArray.length; j++){ // Bubble sort is simple but inefficient for large datasets.
+//     if(resultArray[i] > resultArray[j]){
+//       let temp = resultArray[i]
+//       resultArray[i] = resultArray[j]
+//       resultArray[j] = temp
+//     }
+//   }
+// }
+
+// let uniqueArray = [];
+// let uniqueIndex = 0
+// for(let i = 0; i<resultArray.length; i++){
+//   let isDuplicate = false;
+//   for(let j = 0; j<uniqueArray.length; j++){
+//     if(resultArray[i] === uniqueArray[j]){
+//       isDuplicate = true;
+//       break
+//     }
+//   }
+//   if(!isDuplicate){
+//     uniqueArray[uniqueIndex] = resultArray[i]
+//     uniqueIndex++
+//   }
+// }
+// console.log(uniqueArray)
+
+
+// Array.includes 
+
+// for(let i = 0; i<firstArray.length; i++){
+//   if(!resultArray.includes(firstArray[i])){
+//     resultArray.push(firstArray[i])
+//   }
+// }
+// for(let i = 0; i<secondArray.length; i++){
+//   if(!resultArray.includes(secondArray[i])){
+//     resultArray.push(secondArray[i])
+//   }
+// }
+// console.log(resultArray)
+// exclude if the same item repeats in the array
