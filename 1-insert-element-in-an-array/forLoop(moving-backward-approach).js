@@ -14,3 +14,4 @@ array[position] = newValue
 console.log(array)
 
 // NOTE :- The backward-moving array approach is generally faster because it directly shifts elements without requiring temporary storage or extra operations. It directly moves each element to the next index, ensuring that no values are overwritten or stored temporarily.
+// JS arrays are dynamic – assigning a value beyond the current index increases the length.
