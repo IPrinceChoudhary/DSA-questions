@@ -59,17 +59,52 @@
 
 
 // polyfill for spread operator
-function spreadPolyfill(arr) {
-  let newArray = new Array(arr.length);
-  
-  for (let i = 0; i < arr.length; i++) {
-    newArray[i] = arr[i];
-  }
-  
-  return newArray;
-}
 
-// Usage
-const original = [1, 2, 3];
-const copy = spreadPolyfill(original);
-console.log(copy);
+// function spreadPolyfill(arr) {
+//   let newArray = new Array(arr.length);
+  
+//   for (let i = 0; i < arr.length; i++) {
+//     newArray[i] = arr[i];
+//   }
+  
+//   return newArray;
+// }
+
+// const original = [1, 2, 3];
+// const copy = spreadPolyfill(original);
+// console.log(copy);
+
+
+
+
+// polyfill for reduce 
+
+const array = [23, 53, 62, 16, 73, 9];
+
+const position = 3;
+let newValue = 69;
+
+Array.prototype.customReduce = function (callback, initialValue) {
+  let accumulator = initialValue;  
+
+  for (let index = 0; index < this.length; index++) {
+    accumulator = callback(accumulator, this[index], index, this);
+  }
+
+  return accumulator;
+};
+
+const insertAtPosition = (array, position, newValue) => 
+  array.customReduce((arr, curr, index) => {
+    if (index < position) {
+      arr[index] = curr;
+    } else if (index === position) {
+      arr[index] = newValue;
+      arr[index + 1] = curr;
+    } else {
+      arr[index + 1] = curr;
+    }
+    return arr;
+  }, new Array(array.length + 1)); 
+
+console.log(insertAtPosition(array, position, newValue));

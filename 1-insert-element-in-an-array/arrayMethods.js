@@ -1,19 +1,19 @@
 // 1                      insert value in an array in a specific position
 
-const array = [23, 53, 62, 16, 73, 9];
+// const array = [23, 53, 62, 16, 73, 9];
 
-const position = 3;
-let newValue = 69;
+// const position = 3;
+// let newValue = 69;
 
 
 // 1... SPLICE Method
 
-array.splice(position, 0, newValue);
+// array.splice(position, 0, newValue);
 // const data = array.splice(position, 1, newValue); // remove an item and add removed item in an array
 // console.log(data)
 
 // array.splice(position, 0, newValue, 33) // can add multiple items
-console.log(array)
+// console.log(array)
 
 
 // 2... SLICE and CONCAT and SPREAD OPERATOR method
@@ -73,3 +73,29 @@ console.log(array)
 //   return index === position ? [newValue, element] : element
 // })
 // console.log(newArray)
+
+
+
+
+// 7... reduce
+
+// const array = [23, 53, 62, 16, 73, 9];
+
+// const position = 3;
+// let newValue = 69;
+
+// const result = array.reduce((arr, curr, index)=>{
+//   if(index < position){
+//     arr[index] = curr
+//   }
+//   else if(index === position){
+//     arr[index] = newValue
+//     arr[index + 1] = curr
+//   }
+//   else{
+//     arr[index + 1] = curr
+//   }
+//   return arr
+// }, new Array(array.length + 1))
+
+// console.log(result)
