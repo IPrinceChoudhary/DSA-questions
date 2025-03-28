@@ -1,8 +1,5 @@
 // polyfill for push method - in the forLoop(forward-approach.js file)
 
-
-
-
 // polyfill for slice method
 
 // let example = [23,45,62,33,23435,52,35];
@@ -22,10 +19,7 @@
 // const result = example.sliceArray(start, position);
 // console.log(result);
 
-
-
-
-// polyfill for concat method 
+// polyfill for concat method
 
 // const firstArray = [1,2,3]
 // const secondArray = [4,5,6]
@@ -55,18 +49,15 @@
 // const result = oldArray.concatArray(firstArray, secondArray)
 // console.log(result)
 
-
-
-
 // polyfill for spread operator
 
 // function spreadPolyfill(arr) {
 //   let newArray = new Array(arr.length);
-  
+
 //   for (let i = 0; i < arr.length; i++) {
 //     newArray[i] = arr[i];
 //   }
-  
+
 //   return newArray;
 // }
 
@@ -74,37 +65,44 @@
 // const copy = spreadPolyfill(original);
 // console.log(copy);
 
-
-
-
-// polyfill for reduce 
+// polyfill for reduce
 
 const array = [23, 53, 62, 16, 73, 9];
 
 const position = 3;
 let newValue = 69;
 
-Array.prototype.customReduce = function (callback, initialValue) {
-  let accumulator = initialValue;  
+Array.prototype.myReduce = function (callback, initialValue) {
+  let accumulator = initialValue;
+  let startIndex = 0;
 
-  for (let index = 0; index < this.length; index++) {
-    accumulator = callback(accumulator, this[index], index, this);
+  if (!accumulator) {
+    if (this.length === 0) {
+      throw new TypeError("Reduce of empty array with no initial value");
+    }
+    accumulator = this[0];
+    startIndex = 1;
   }
 
+  for (let index = startIndex; index < this.length; index++) {
+    accumulator = callback(accumulator, this[index], index, this);
+  }
   return accumulator;
 };
 
-const insertAtPosition = (array, position, newValue) => 
-  array.customReduce((arr, curr, index) => {
-    if (index < position) {
-      arr[index] = curr;
-    } else if (index === position) {
-      arr[index] = newValue;
-      arr[index + 1] = curr;
+const addedValue = (arr, pos, newValue) => {
+  return arr.myReduce((acc, curr, index, arr) => {
+    if (index < pos) {
+      acc[index] = curr;
+    } else if (index === pos) {
+      acc[index] = newValue;
+      acc[index + 1] = curr;
     } else {
-      arr[index + 1] = curr;
+      acc[index + 1] = curr;
     }
-    return arr;
-  }, new Array(array.length + 1)); 
+    return acc;
+  }, new Array(arr.length + 1));
+};
 
-console.log(insertAtPosition(array, position, newValue));
+const result = addedValue(array, position, newValue);
+console.log(result);
