@@ -6,8 +6,8 @@ const array = [23, 53, 62, 16, 73, 9];
 
 const position = 3;
 
-array.splice(position, 1)
-console.log(array)
+// array.splice(position, 1)
+// console.log(array)
 
 
 // Slice and Concat
@@ -94,3 +94,17 @@ console.log(array)
 // })
 // console.log(newArray)
 // console.log(array)
+
+
+
+// doing with reduce in other way
+
+// const newArray = array.reduce((acc, curr, i, arr)=>{
+//   if(i !== position){
+//     acc[acc.length] = curr
+//   }
+//   return acc
+// }, [])
+// console.log(newArray)
+// much efficient
+
