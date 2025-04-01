@@ -108,3 +108,40 @@ const position = 3;
 // console.log(newArray)
 // much efficient
 
+
+// doing with reduceRight in other way
+
+// const newArray = array.reduceRight((acc, curr, i, arr)=>{
+//   if(i !== position){
+//     if(i > position){
+//       acc[i-1] = curr
+//     }
+//     else{
+//       acc[i] = curr
+//     }
+//   }
+//   return acc
+// }, [])
+// console.log(newArray)
+
+
+// doing with Array.from in other way 
+
+// const newArray = Array.from({length: array.length - 1}, (_, i)=>{
+//   return i < position ? array[i] : array[i+1]
+// }, this)
+// console.log(newArray)
+
+
+// doing with map in other way 
+
+// const newArray = (()=>{
+//   let temp = [];
+//   array.map((value, index, array)=>{
+//     if(index !== position){
+//       temp[temp.length] = value
+//     }
+//   }, this)
+//   return temp
+// })()
+// console.log(newArray)
