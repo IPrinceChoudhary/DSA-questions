@@ -2,6 +2,22 @@
 
 const arr = [1, 2, 3]
 
+Array.prototype.myForeach = function(callback, thisArg){
+  if(this == null){
+    throw new TypeError("Cannot read properties of null (reading 'forEach')");
+  }
+  if(typeof callback !== "function"){
+    throw new TypeError(callback + " its not a function");
+  }
+
+  for(let index = 0; index < this.length; index++){
+    callback(this[index], index, this)
+  }
+}
+
+arr.myForeach(item => console.log(item * 2))
+console.log(arr)
+
 // Array.prototype.myMap =  function(callback, thisArg){
 //   if (this == null) {
 //     throw new TypeError("Cannot read properties of null (reading 'map')");
@@ -48,32 +64,32 @@ const arr = [1, 2, 3]
 
 // reduce 
 
-Array.prototype.myReduce = function(callback, initial){
-  if(typeof callback !== "function"){
-    throw new TypeError(callback + " is not a function")
-  }
-  if(!this.length && initial === undefined){
-    throw new TypeError("Reduce of empty array with no initial value")
-  }
+// Array.prototype.myReduce = function(callback, initial){
+//   if(typeof callback !== "function"){
+//     throw new TypeError(callback + " is not a function")
+//   }
+//   if(!this.length && initial === undefined){
+//     throw new TypeError("Reduce of empty array with no initial value")
+//   }
 
-  let accumulator;
-  let startIndex;
+//   let accumulator;
+//   let startIndex;
 
-  if(initial !== undefined){
-    accumulator = initial;
-    startIndex = 0;
-  }else{
-    accumulator = this[0];
-    startIndex = 1;
-  }
+//   if(initial !== undefined){
+//     accumulator = initial;
+//     startIndex = 0;
+//   }else{
+//     accumulator = this[0];
+//     startIndex = 1;
+//   }
 
-  for(let index = startIndex; index < this.length; index++){
-    accumulator = callback(accumulator, this[index], index, this)
-  }
-  return accumulator
-}
+//   for(let index = startIndex; index < this.length; index++){
+//     accumulator = callback(accumulator, this[index], index, this)
+//   }
+//   return accumulator
+// }
 
-const result = arr.myReduce((acc, crr) => acc + crr)
-const result2 = arr.myReduce((acc, crr)=> acc + crr, 10)
-console.log(result)
-console.log(result2)
+// const result = arr.myReduce((acc, crr) => acc + crr)
+// const result2 = arr.myReduce((acc, crr)=> acc + crr, 10)
+// console.log(result)
+// console.log(result2)
