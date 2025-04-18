@@ -4,26 +4,29 @@
 
 //ascending
 let data = [50, 33, 66, 28, 18];
-for(let i = 1; i<data.length; i++){
-  let current = data[i];
-  let j = i - 1
+// for(let i = 1; i<data.length; i++){
+//   let current = data[i];
+//   let j;
 
-  for(;j>=0 && data[j]>current; j--){
-    data[j+1] = data[j]
-  }
-  data[j+1] = current
-  console.log(data)
-}
-console.log(data)
+//   for(j = i - 1 ;j>=0 && data[j]>current; j--){
+//     console.log(j)
+//     data[j+1] = data[j]
+//     console.log(data)
+//   }
+//   console.log(j)
+//   data[j+1] = current
+//   console.log(data)
+// }
+// console.log(data)
 
 //descending
-// for (let i = 1; i < data.length; i++) {
-//   let current = data[i];
-//   let j = i - 1;
-//   for (; j >= 0 && data[j] < current; j--) {
-//     data[j + 1] = data[j];
-//   }
-//   data[j + 1] = current;
-//   console.log(data);
-// }
-// console.log(data);
+for(let i = 1; i < data.length; i++){
+  let current = data[i];
+  let j;
+
+  for(j = i-1; j>=0 && data[j] < current; j--){
+    data[j+1] = data[j];
+  }
+  data[j+1] = current
+}
+console.log(data)
